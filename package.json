@@ -1,0 +1,67 @@
+{
+  "name": "ninesport-statscore-widget",
+  "private": false,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "A React component to embed Statscore widgets.",
+  "main": "./dist/ninesport-statscore-widget.umd.cjs",
+  "module": "./dist/ninesport-statscore-widget.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/ninesport-statscore-widget.js",
+      "require": "./dist/ninesport-statscore-widget.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ninesport/ninesport-statscore-widget.git"
+  },
+  "homepage": "https://github.com/Ninesport/ninesport-statscore-widget#readme",
+  "bugs": {
+    "url": "https://github.com/Ninesport/ninesport-statscore-widget/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "publish": "yarn test && yarn build && npm publish"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "jsdom": "^24.0.0",
+    "@types/node": "^20.11.24",
+    "@types/react": "^18.2.56",
+    "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
+    "vitest": "^1.3.1"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "statscore",
+    "widget"
+  ],
+  "author": "ninesport",
+  "license": "MIT"
+}
