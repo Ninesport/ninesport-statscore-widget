@@ -10,6 +10,7 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
+      rollupTypes: true,
     }),
   ],
   build: {

@@ -1,7 +1,7 @@
 {
   "name": "ninesport-statscore-widget",
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A React component to embed Statscore widgets.",
   "main": "./dist/ninesport-statscore-widget.umd.cjs",
@@ -9,6 +9,7 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/ninesport-statscore-widget.js",
       "require": "./dist/ninesport-statscore-widget.umd.cjs"
     }
@@ -39,7 +40,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
-    "jsdom": "^24.0.0",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
@@ -49,6 +49,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "jsdom": "^24.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^5.2.2",
