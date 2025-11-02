@@ -15,16 +15,25 @@ export default defineConfig({
   ],
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'NinesportStatscoreWidget',
-      // the proper extensions will be added
-      fileName: 'ninesport-statscore-widget',
+      formats: ['es', 'cjs'],
+      fileName: (format) => {
+        if (format === 'es') return 'ninesport-statscore-widget.js';
+        if (format === 'cjs') return 'ninesport-statscore-widget.cjs';
+        return `ninesport-statscore-widget.${format}.js`;
+      },
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
       external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
     },
   },
   test: {
