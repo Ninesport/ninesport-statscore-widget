@@ -1,7 +1,7 @@
 {
   "name": "ninesport-statscore-widget",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.4",
   "type": "module",
   "description": "A React component to embed Statscore widgets.",
   "main": "./dist/ninesport-statscore-widget.umd.cjs",
@@ -31,11 +31,11 @@
     "test": "vitest",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "publish": "yarn test && yarn build && npm publish"
+    "test-publish": "yarn test && yarn build && yarn publish"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
