@@ -1,7 +1,7 @@
 {
   "name": "ninesport-statscore-widget",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "type": "module",
   "description": "A React component to embed Statscore widgets.",
   "main": "./dist/ninesport-statscore-widget.cjs",
