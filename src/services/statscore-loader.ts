@@ -16,8 +16,8 @@ declare global {
     }
 }
 
-const SCRIPT_ID = "STATSCOREWidgetsEmbederScript";
-let scriptPromise: Promise<void> | null = null;
+const SCRIPT_ID = "STATSCOREWidgetsEmbederScript"
+let scriptPromise: Promise<void> | null = null
 
 /**
  * 載入 Statscore 腳本，並確保它在應用程式的生命週期中只被載入一次。
@@ -25,24 +25,24 @@ let scriptPromise: Promise<void> | null = null;
  */
 export function loadStatscoreScript(): Promise<void> {
     if (scriptPromise) {
-        return scriptPromise;
+        return scriptPromise
     }
 
     scriptPromise = new Promise((resolve, reject) => {
         if (document.getElementById(SCRIPT_ID)) {
-            return resolve();
+            return resolve()
         }
 
-        const script = document.createElement('script');
-        script.id = SCRIPT_ID;
-        script.src = "https://wgt-s3-cdn.statscore.com/bundle/EmbederESM.js";
-        script.async = true;
-        script.type = "module";
-        script.onload = () => resolve();
-        script.onerror = (error) => reject(error);
+        const script = document.createElement("script")
+        script.id = SCRIPT_ID
+        script.src = "https://wgt-s3-cdn.statscore.com/bundle/EmbederESM.js"
+        script.async = true
+        script.type = "module"
+        script.onload = () => resolve()
+        script.onerror = (error) => reject(error)
 
-        document.body.appendChild(script);
-    });
+        document.body.appendChild(script)
+    })
 
-    return scriptPromise;
+    return scriptPromise
 }

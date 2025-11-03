@@ -1,5 +1,5 @@
-import { useEffect, type FunctionComponent } from 'react'
-import { loadStatscoreScript } from '../../services/statscore-loader';
+import { useEffect, type FunctionComponent } from "react"
+import { loadStatscoreScript } from "../../services/statscore-loader"
 
 /**
  * Statscore Widget 元件的 Props。
@@ -24,15 +24,15 @@ const Widget: FunctionComponent<WidgetProps> = ({ lsportsEventId, configurationI
     const widgetElementId = `STATSCOREWidget${widgetId}`
 
     useEffect(() => {
-        let isMounted = true;
-        const container = document.getElementById(widgetElementId);
+        let isMounted = true
+        const container = document.getElementById(widgetElementId)
 
         loadStatscoreScript()
             .then(() => {
                 // 確保元件仍然掛載，且容器和 Widget 建構函式都存在
                 if (isMounted && container && window.STATSCOREWidgets?.Widget) {
                     // 在初始化新 Widget 之前，先清空容器，以防因 props 變更而重新渲染
-                    container.innerHTML = '';
+                    container.innerHTML = ""
                     // 實例化小工具並將其渲染到我們的目標 div 中。
                     new window.STATSCOREWidgets.Widget(
                         container,
@@ -44,18 +44,18 @@ const Widget: FunctionComponent<WidgetProps> = ({ lsportsEventId, configurationI
                 }
             })
             .catch(error => {
-                console.error("Failed to load Statscore script:", error);
-            });
+                console.error("Failed to load Statscore script:", error)
+            })
 
         // 清理函式只負責清理此元件實例相關的內容
         return () => {
-            isMounted = false;
+            isMounted = false
             // 清理此 Widget 實例所佔用的 DOM 內容
             if (container) {
-                container.innerHTML = '';
+                container.innerHTML = ""
             }
         }
-    }, [lsportsEventId, configurationId, widgetId, language]); // 當 props 變更時，重新執行 effect 以更新 Widget
+    }, [lsportsEventId, configurationId, widgetId, language]) // 當 props 變更時，重新執行 effect 以更新 Widget
 
     // 這是將要渲染 Statscore 小工具的容器 div。
     return <div id={widgetElementId} />

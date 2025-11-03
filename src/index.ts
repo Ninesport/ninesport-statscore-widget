@@ -1,3 +1,3 @@
-import Widget from './components/Widget/Widget';
+import Widget from "./components/Widget/Widget"
 
-export { Widget };
+export { Widget }
